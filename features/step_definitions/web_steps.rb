@@ -49,7 +49,7 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-When /^(?:|I )press "([^"]*)"$/ do |button|
+When /^(?:|I )(press|click) "([^"]*)"$/ do |press_click, button|
   click_button(button)
 end
 
@@ -93,6 +93,13 @@ end
 When /^(?:|I )uncheck "([^"]*)"$/ do |field|
   uncheck(field)
 end
+
+# When /^(?:|I )check the following ratings: ([^"]*)/ do |ratings|
+#  ratings.split(', ').each do |rating|
+#    puts "ratings[#{rating}]"
+#    check("ratings[#{rating}]")
+#  end
+# ennd
 
 When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
